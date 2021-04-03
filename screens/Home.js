@@ -31,7 +31,6 @@ const Home=({navigation})=>{
 
     let currentIndex=useRef(0);
 
-
     useEffect(async ()=>{
         let url=topRatedMovieUrl.concat("1");
         await axios.get(url).then((response)=>{
@@ -56,7 +55,7 @@ const Home=({navigation})=>{
 
         let turl=popularMovieUrl.concat("1");
 
-        await axios.get(turl).then((response)=>{
+         axios.get(turl).then((response)=>{
             const fetchedData=response.data.results;
             const list=[];
             for(let i=0;i<fetchedData.length;i++){

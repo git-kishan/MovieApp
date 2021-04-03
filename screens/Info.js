@@ -41,8 +41,8 @@ const Info = ({route, navigation}) => {
 
   const scrollX = useRef(new Animated.Value(0)).current;
 
-  const loadData = () => {
-    axios
+  const loadData = async () => {
+       axios
       .get(movieImageUrl)
       .then(response => {
         const fetchedData = response?.data;
@@ -63,8 +63,8 @@ const Info = ({route, navigation}) => {
     handleImageCarouselScroll();
   }, []);
 
-  useEffect(() => {
-    axios
+  useEffect(async () => {
+    await axios
       .get(movieDetailUrl)
       .then(response => {
         const fetchedData = response?.data;
